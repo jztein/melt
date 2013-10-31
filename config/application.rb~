@@ -60,6 +60,6 @@ module Forest
     config.assets.version = '1.0'
 
     # for heroku, which doesn't provide whole app env to the build proc
-    config.assets.initialize_on_precompile = failse
+    config.assets.initialize_on_precompile = false
   end
 end

@@ -1,0 +1,14 @@
+<h1>Editing hangout</h1>
+
+<p>Please submit a new event</p>
+
+<% unless @hangout == nil %>
+
+<%= render 'form' %>
+
+<% else %>
+<p> Error: No hangout to edit </p>
+
+<% end %>
+
+<%= link_to "Back", hangouts_path %>

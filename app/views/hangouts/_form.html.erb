@@ -1,0 +1,57 @@
+<% if @hangout == nil %>
+  <%= form_for :hangout, url: hangouts_path do |f| %>
+
+  <!-- form details -->
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+   <!-- end of form -->
+  <% end %>
+
+<% else %>
+  <!-- form for entering a new hangout -->
+  <%= form_for @hangout do |f| %>
+    <!-- notify user of errors (too little info) in saving hangout post-->
+    <% if @hangout.errors.any? %>
+      <div id="errorExplanation">
+	<h2><%= pluralize(@hangout.errors.count, "error") %> prohibited this post from being saved:</h2>
+	<ul>
+	  <% @hangout.errors.full_messages.each do |msg| %>
+	    <li><%= msg %></li>
+	  <% end %>
+	</ul>
+      </div>
+    <% end %>
+
+    <!-- form details -->
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+  <% end %>
+
+
+<% end %>
+
+
