@@ -1,0 +1,11 @@
+development: &defaults
+  client_id: 155830041294213
+  api_id: 155830041294213
+  client_secret: ba3cac1b86c57faa7323fdabadd2cba3
+  scope: user_about_me,user_education_history,user_groups,user_interests,user_likes,email
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
