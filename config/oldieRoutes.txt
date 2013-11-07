@@ -1,0 +1,14 @@
+Forest::Application.routes.draw do
+  get "home/index"
+  match "home/index", :to => "home#index"
+  root to: "home#index"
+
+  match "home/channel", :to => "home#channel", via: 'get'
+
+  match "hangouts/index" => "hangouts#index", :via => 'get'
+  match "hangouts/new" => "hangouts#new", :via => 'get'
+  match "hangouts/edit" => "hangouts#edit", :via => 'get'
+  match "hangouts/show" => "hangouts#show", :via => 'get'
+
+  resources :hangouts
+end
